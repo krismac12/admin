@@ -45,28 +45,28 @@ namespace WindowsFormsApp1
             connection.Close();
         }
 
-        public static void UpdateUser(User user)
+        public static void UpdateUser(int ID, string name,string key)
         {
-            string sql = "UPDATE Users set Name = @Name, PassKey = @key WHERE ID = @ID";
+            string sql = "UPDATE Users set UserName = @Name, PassKey = @key WHERE ID = @ID";
             MySqlConnection connection = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Parameters.Add("@Name", MySqlDbType.VarChar).Value = user.name;
-            cmd.Parameters.Add("@key", MySqlDbType.VarChar).Value = user.key;
-            cmd.Parameters.Add("@ID", MySqlDbType.Int16).Value = user.ID;
+            cmd.Parameters.Add("@Name", MySqlDbType.VarChar).Value = name;
+            cmd.Parameters.Add("@key", MySqlDbType.VarChar).Value = key;
+            cmd.Parameters.Add("@ID", MySqlDbType.Int16).Value = ID;
 
             try
             {
                 cmd.ExecuteNonQuery();
             }
-            catch
+            catch(MySqlException ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
 
-        public static void deleteUser(string ID)
+        public static void deleteUser(int ID)
         {
             string sql = "Delete FROM Users Where ID = @ID";
             MySqlConnection connection = GetConnection();

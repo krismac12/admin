@@ -36,11 +36,13 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Top_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Top_Label);
             this.panel1.Controls.Add(this.Add_Button);
             this.panel1.Controls.Add(this.generate_button);
             this.panel1.Controls.Add(this.Key_Box);
@@ -61,6 +63,7 @@ namespace WindowsFormsApp1
             this.Add_Button.TabIndex = 5;
             this.Add_Button.Text = "Add";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // generate_button
             // 
@@ -70,6 +73,7 @@ namespace WindowsFormsApp1
             this.generate_button.TabIndex = 4;
             this.generate_button.Text = "Generate Key";
             this.generate_button.UseVisualStyleBackColor = true;
+            this.generate_button.Click += new System.EventHandler(this.generate_button_Click);
             // 
             // Key_Box
             // 
@@ -103,6 +107,15 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
+            // Top_Label
+            // 
+            this.Top_Label.Location = new System.Drawing.Point(0, 16);
+            this.Top_Label.Name = "Top_Label";
+            this.Top_Label.Size = new System.Drawing.Size(376, 20);
+            this.Top_Label.TabIndex = 6;
+            this.Top_Label.Text = "Add User";
+            this.Top_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // user_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -126,5 +139,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Top_Label;
     }
 }
