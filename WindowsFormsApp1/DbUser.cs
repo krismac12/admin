@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=sql12.freesqldatabase.com;port=3306;username=sql12598818;password=5nZGNzw9LH;database=sql12598818";
+            string sql = "datasource=database-1.cfhtfo3hseoy.ap-northeast-1.rds.amazonaws.com;port=3306;username=admin;password=vdCoUCQNQiBFLHfa3YLw;database=AutoTable";
             MySqlConnection connection = new MySqlConnection(sql);
             try
             {
