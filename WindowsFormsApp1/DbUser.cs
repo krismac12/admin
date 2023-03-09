@@ -11,9 +11,11 @@ namespace WindowsFormsApp1
 {
     class DbUser
     {
+        MySqlConnection connection;
+
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=database-1.cfhtfo3hseoy.ap-northeast-1.rds.amazonaws.com;port=3306;username=admin;password=vdCoUCQNQiBFLHfa3YLw;database=AutoTable";
+            string sql = "datasource=schedix-database.cssjh7thmdbg.ap-southeast-2.rds.amazonaws.com;port=3306;username=admin;password=Schedix253!;database=AutoTable";
             MySqlConnection connection = new MySqlConnection(sql);
             try
             {
@@ -24,6 +26,11 @@ namespace WindowsFormsApp1
 
             }
             return connection;
+        }
+
+        public static void close()
+        {
+
         }
 
         public static void AddUser(string name,string key)
