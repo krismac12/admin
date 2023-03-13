@@ -11,11 +11,11 @@ namespace WindowsFormsApp1
 {
     class DbUser
     {
-        MySqlConnection connection;
 
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=schedix-database.cssjh7thmdbg.ap-southeast-2.rds.amazonaws.com;port=3306;username=admin;password=Schedix253!;database=AutoTable";
+
+            string sql = "datasource=schedix-db.cssjh7thmdbg.ap-southeast-2.rds.amazonaws.com; port =3306;username=admin;password=Schedix253!;database=AutoTable";
             MySqlConnection connection = new MySqlConnection(sql);
             try
             {

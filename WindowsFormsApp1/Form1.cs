@@ -55,7 +55,9 @@ namespace WindowsFormsApp1
             {
                 var id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string name = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                user_form edit = new user_form(int.Parse(id),name);
+                string key = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                user_form edit = new user_form(int.Parse(id),name,key);
                 edit.Show();
                 DbUser.Display(dataGridView1);
             }

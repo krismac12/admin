@@ -18,12 +18,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public user_form(int id,string name)
+        public user_form(int id,string name,string key)
         {
             InitializeComponent();
             this.id = id;
             Add_Button.Text = "Edit";
             Top_Label.Text = "Edit User: " + name;
+            nameBox.Text = name;
+            Key_Box.Text = key;
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
